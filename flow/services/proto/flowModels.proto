@@ -1,0 +1,11 @@
+syntax = "proto3";
+package flow;
+option go_package = "./;services";
+
+//    flow_id  flow_name  created_at  updated_at  org_id
+message Flow{
+  string flowId = 1;
+  string flowName= 2;
+  string orgId = 3;
+  string orgName = 4;
+}

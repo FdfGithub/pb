@@ -1,0 +1,32 @@
+syntax = "proto3";
+package flow;
+import "flowModels.proto";
+option go_package = "./;services";
+
+service ItemService{
+  //根据流程ID查询所有流程项
+
+  //添加流程项
+  rpc AddFlowItem(AddFlowItemReq) returns(AddFlowItemResp);
+  //删除流程项
+  rpc RemoveFlowItem(RemoveFlowItemReq) returns(RemoveFlowItemResp);
+  //修改流程项
+
+  //添加抄送人
+}
+
+message AddFlowItemReq{
+
+}
+
+message AddFlowItemResp{
+
+}
+
+message RemoveFlowItemReq{
+
+}
+
+message RemoveFlowItemResp{
+
+}

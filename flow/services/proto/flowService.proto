@@ -1,0 +1,54 @@
+syntax = "proto3";
+package flow;
+import "flowModels.proto";
+option go_package = "./;services";
+
+service FlowService{
+  //新增流程
+  rpc NewFlow(NewFlowReq) returns(NewFlowResp);
+  //删除流程
+  rpc RemoveFlow(RemoveFlowReq) returns(RemoveFlowResp);
+  //修改流程
+  rpc UpdateFlow(UpdateFlowReq) returns(UpdateFlowResp);
+  //关键词搜索 + 分页查询流程列表
+  rpc GetFlowList(GetFlowListReq) returns(GetFlowListResp);
+}
+
+message RemoveFlowReq{
+  string flowId = 1;
+  string userId = 2;
+}
+
+message RemoveFlowResp{
+
+}
+
+message UpdateFlowReq{
+  Flow flow = 1;
+  string userId = 2;
+}
+
+message UpdateFlowResp{
+
+}
+
+message NewFlowReq{
+  Flow flow = 1;
+  string userId = 2;
+}
+
+message NewFlowResp{
+
+}
+
+message GetFlowListReq{
+  string userId = 1;
+  string keyword = 2;
+  int32 currentPage = 3;
+  int32 pageSize = 4;
+}
+
+message GetFlowListResp{
+  repeated Flow flows = 1;
+  int32 total = 2;
+}

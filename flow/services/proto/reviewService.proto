@@ -1,0 +1,12 @@
+syntax = "proto3";
+package flow;
+import "flowModels.proto";
+option go_package = "./;services";
+
+service ReviewService{
+  //根据流程项创建审批记录
+
+  //审批同意
+
+  //审批退回
+}
